@@ -1,0 +1,207 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                                               controllers.Application.index
+POST    /user/login/                                    controllers.Application.login()
+GET     /user/dynamic/fLog/:id/                         controllers.Application.createRole(id:Long)
+GET     /user/excess/sign/out/                          controllers.Application.logout()
+GET     /user/pagination/entry/:id/                     controllers.Application.pagination(id:String)
+GET     /user/creation/get/user/roles/                  controllers.Application.returnRoles()
+GET     /user/summary/report/er/roles/                  controllers.Application.summary()
+GET     /user/summary/report/roles/:id/                 controllers.Application.summaryDetail(id:Long)
+GET     /user/updatePageRedirect/entry/:id/:i/          controllers.Application.updatePageRedirect(id:String,i:Long)
+GET     /user/deletePageRedirect/entry/:id/:i/          controllers.Application.deletePageRedirect(id:String,i:Long)
+GET     /user/data/entry/form/:id/:i/                   controllers.Application.page(id:String,i:Integer)
+GET     /adminK/viewReport/old/spa/storeKe/             controllers.Application.viewReport()
+GET     /adminK/viewBudgetReport/old/spa/storeKe/       controllers.Application.viewBudgetReport()
+GET     /adminK/viewStandardReport/storeKe/             controllers.Application.viewStandardReport()
+GET     /adminK/viewSpareReport/fg/storeKe/             controllers.Application.viewSpareReport()
+POST    /adminK/finalReportView/sd/storeKe/             controllers.Application.finalReportView()
+GET     /adminK/user/ent/k/update/real/getId/           controllers.Application.getProfile
+GET     /adminK/viewRevenueReport/storeKe/              controllers.Application.viewBeyondRevenueReport()
+GET     /adminK/viewBelowRevenueReport/storeKe/         controllers.Application.viewBelowRevenueReport()
+POST    /adminK/finalRevenueReportView/eKe/             controllers.Application.finalRevenueReportView()
+POST    /adminK/finalRevenueReportViewBelow/eKe/        controllers.Application.finalRevenueReportViewBelow()
+POST    /adminK/finalSpareReportView/stoKe/             controllers.Application.finalSpareReportView()
+POST    /adminK/viewFinalBudgetReport/stoKe/            controllers.Application.viewFinalBudgetReport()
+GET     /ws                                             controllers.HomeController.ws
+GET     /appl/admin/fLog/:id/                           controllers.Application.tabs(id:String)
+GET     /appl/data/update/form/:id/:i/                  controllers.Application.updatePage(id:Long,i:String)
+GET     /appl/data/delete/form/:id/:i/                  controllers.Application.delete(id:Long,i:String)
+GET     /appli/data/entry/:id/                          controllers.Application.paginate(id:String)
+GET     /appli/data/real/data/:id/:i/                   controllers.Application.data(id:String,i:Integer)
+POST    /appli/insert/real/data/:id/                    controllers.Application.save(id:String)
+POST    /appli/update/real/data/:id/:i/                 controllers.Application.update(id:Long,i:String)
+
+
+# Administrator main link
+
+
+GET     /user/admin/fLog/:id/                           controllers.AdminController.tabs(id:String)
+GET     /user/data/update/form/:id/:i/                  controllers.AdminController.updatePage(id:Long,i:String)
+GET     /user/data/delete/form/:id/:i/                  controllers.AdminController.delete(id:Long,i:String)
+GET     /admin/data/entry/:id/                          controllers.AdminController.pagination(id:String)
+GET     /admin/data/sys/editProfile/                    controllers.AdminController.editProfile()
+GET     /admin/data/real/data/:id/:i/                   controllers.AdminController.data(id:String,i:Integer)
+POST    /admin/insert/real/data/:id/                    controllers.AdminController.save(id:String)
+POST    /admin/update/profi/profile/                    controllers.AdminController.updateProfile()
+POST    /admin/update/real/data/:id/:i/                 controllers.AdminController.update(id:Long,i:String)
+
+
+# Accountant main link
+
+
+GET     /accou/admin/fLog/:id/                          controllers.AccountantController.tabs(id:String)
+GET     /accou/data/update/form/:id/:i/                 controllers.AccountantController.updatePage(id:Long,i:String)
+GET     /accou/data/delete/form/:id/:i/                 controllers.AccountantController.delete(id:Long,i:String)
+GET     /accou/data/entry/:id/                          controllers.AccountantController.pagination(id:String)
+GET     /accou/data/real/data/:id/:i/                   controllers.AccountantController.data(id:String,i:Integer)
+POST    /accou/insert/real/data/:id/                    controllers.AccountantController.save(id:String)
+POST    /accou/update/real/data/:id/:i/                 controllers.AccountantController.update(id:Long,i:String)
+
+
+
+# Garage manager main links here main link
+
+
+GET     /garage/data/delete/form/:id/:i/                controllers.GarageManager.delete(id:Long,i:String)
+GET     /garage/data/entry/:id/                         controllers.GarageManager.pagination(id:String)
+GET     /garage/data/real/data/:id/:i/                  controllers.GarageManager.data(id:String,i:Integer)
+POST    /garage/insert/real/data/:id/                   controllers.GarageManager.save(id:String)
+POST    /garage/update/real/data/:id/:i/                controllers.GarageManager.update(id:Long,i:String)
+GET     /garage/admin/fLog/:id/                         controllers.GarageManager.tabs(id:String)
+GET     /garage/data/update/form/:id/:i/                controllers.GarageManager.updatePage(id:Long,i:String)
+GET     /garage/approve/request/storeKe/                controllers.GarageManager.approveContent()
+GET     /garage/approve/old/spa/storeKe/                controllers.GarageManager.approveOld()
+POST    /garage/form/approve/storeRequest/              controllers.GarageManager.submitApproval()
+POST    /garage/old/f/approve/storeRequest/             controllers.GarageManager.submitOldApproval()
+
+
+
+# Store keeper manager main links here main link
+
+
+GET     /storeK/data/delete/form/:id/:i/                controllers.StoreKeeper.delete(id:Long,i:String)
+GET     /storeK/data/entry/:id/                         controllers.StoreKeeper.pagination(id:String)
+GET     /storeK/data/real/data/:id/:i/                  controllers.StoreKeeper.data(id:String,i:Integer)
+POST    /storeK/insert/real/data/:id/                   controllers.StoreKeeper.save(id:String)
+POST    /storeK/update/real/data/:id/:i/                controllers.StoreKeeper.update(id:Long,i:String)
+GET     /storeK/admin/fLog/:id/                         controllers.StoreKeeper.tabs(id:String)
+GET     /storeK/admin/addToStock/id/                    controllers.StoreKeeper.addToStock()
+POST    /storeK/admin/storeApproved/                    controllers.StoreKeeper.setAdded()
+GET     /storeK/data/update/form/:id/:i/                controllers.StoreKeeper.updatePage(id:Long,i:String)
+GET     /storeK/approve/old/spa/storeKe/                controllers.StoreKeeper.approveOld()
+POST    /storeK/old/f/approve/storeRequest/             controllers.StoreKeeper.submitOldApproval()
+
+
+# Transport MD manager main links here main link
+
+
+GET     /tranSD/data/delete/form/:id/:i/                controllers.TransportMD.delete(id:Long,i:String)
+GET     /tranSD/data/entry/:id/                         controllers.TransportMD.pagination(id:String)
+GET     /tranSD/data/entry/data/approve/                controllers.TransportMD.approve()
+GET     /tranSD/data/real/data/:id/:i/                  controllers.TransportMD.data(id:String,i:Integer)
+POST    /tranSD/insert/real/data/:id/                   controllers.TransportMD.save(id:String)
+POST    /tranSD/update/real/data/:id/:i/                controllers.TransportMD.update(id:Long,i:String)
+GET     /tranSD/admin/fLog/:id/                         controllers.TransportMD.tabs(id:String)
+GET     /tranSD/data/update/form/:id/:i/                controllers.TransportMD.updatePage(id:Long,i:String)
+POST    /tranSD/form/approve/storeRequest/              controllers.TransportMD.submitApproval()
+
+
+
+# Procurement MD manager main links here main link
+
+
+GET     /procur/data/delete/form/:id/:i/                controllers.Procurement.delete(id:Long,i:String)
+GET     /procur/data/entry/:id/                         controllers.Procurement.pagination(id:String)
+GET     /procur/data/entry/data/approve/                controllers.Procurement.approve()
+GET     /procur/data/real/data/:id/:i/                  controllers.Procurement.data(id:String,i:Integer)
+POST    /procur/insert/real/data/:id/                   controllers.Procurement.save(id:String)
+POST    /procur/update/real/data/:id/:i/                controllers.Procurement.update(id:Long,i:String)
+GET     /procur/admin/fLog/:id/                         controllers.Procurement.tabs(id:String)
+GET     /procur/data/update/form/:id/:i/                controllers.Procurement.updatePage(id:Long,i:String)
+POST    /procur/form/approve/storeRequest/              controllers.Procurement.submitApproval()
+
+
+
+# ForeMan MD manager main links here main link
+
+
+GET     /foreMa/data/delete/form/:id/:i/                controllers.ForeMan.delete(id:Long,i:String)
+GET     /foreMa/data/entry/:id/                         controllers.ForeMan.pagination(id:String)
+GET     /foreMa/data/real/data/:id/:i/                  controllers.ForeMan.data(id:String,i:Integer)
+POST    /foreMa/insert/real/data/:id/                   controllers.ForeMan.save(id:String)
+POST    /foreMa/update/real/data/:id/:i/                controllers.ForeMan.update(id:Long,i:String)
+GET     /foreMa/admin/fLog/:id/                         controllers.ForeMan.tabs(id:String)
+GET     /foreMa/admin/fLog/data/approveOld/             controllers.ForeMan.approveOld()
+POST    /foreMa/admin/submitApproval/data/a/            controllers.ForeMan.submitApproval()
+GET     /foreMa/data/update/form/:id/:i/                controllers.ForeMan.updatePage(id:Long,i:String)
+
+
+
+# Chief Mechanic MD manager main links here main link
+
+
+GET     /chiefM/data/delete/form/:id/:i/                controllers.ChiefMechanic.delete(id:Long,i:String)
+GET     /chiefM/data/entry/:id/                         controllers.ChiefMechanic.pagination(id:String)
+GET     /chiefM/data/real/data/:id/:i/                  controllers.ChiefMechanic.data(id:String,i:Integer)
+POST    /chiefM/insert/real/data/:id/                   controllers.ChiefMechanic.save(id:String)
+POST    /chiefM/update/real/data/:id/:i/                controllers.ChiefMechanic.update(id:Long,i:String)
+GET     /chiefM/admin/fLog/:id/                         controllers.ChiefMechanic.tabs(id:String)
+GET     /chiefM/data/update/form/:id/:i/                controllers.ChiefMechanic.updatePage(id:Long,i:String)
+
+
+
+
+# ChairMan main links here main link
+
+
+GET     /chairM/data/delete/form/:id/:i/                controllers.ChairMan.delete(id:Long,i:String)
+GET     /chairM/data/entry/:id/                         controllers.ChairMan.pagination(id:String)
+GET     /chairM/data/real/data/:id/:i/                  controllers.ChairMan.data(id:String,i:Integer)
+POST    /chairM/insert/real/data/:id/                   controllers.ChairMan.save(id:String)
+POST    /chairM/update/real/data/:id/:i/                controllers.ChairMan.update(id:Long,i:String)
+GET     /chairM/admin/fLog/:id/                         controllers.ChairMan.tabs(id:String)
+GET     /chairM/theUser/fLog/printRequest/              controllers.ChairMan.printRequest()
+GET     /chairM/data/update/form/:id/:i/                controllers.ChairMan.updatePage(id:Long,i:String)
+
+
+
+
+# ChairMan main links here main link
+
+
+
+
+GET     /financ/data/delete/form/:id/:i/                controllers.Finance.delete(id:Long,i:String)
+GET     /financ/data/entry/:id/                         controllers.Finance.pagination(id:String)
+GET     /financ/data/real/data/:id/:i/                  controllers.Finance.data(id:String,i:Integer)
+POST    /financ/insert/real/data/:id/                   controllers.Finance.save(id:String)
+POST    /financ/update/real/data/:id/:i/                controllers.Finance.update(id:Long,i:String)
+GET     /financ/admin/fLog/:id/                         controllers.Finance.tabs(id:String)
+GET     /financ/data/update/form/:id/:i/                controllers.Finance.updatePage(id:Long,i:String)
+GET     /financ/data/entry/data/approve/                controllers.Finance.approve()
+POST    /financ/form/approve/storeRequest/              controllers.Finance.submitApproval()
+
+
+
+#Reports
+
+
+
+
+GET         /reports/index/:s/                                controllers.ReportsController.index(s:String)
+GET         /reports/getReportChooseValue/:s/                 controllers.ReportsController.getReportChooseValue(s:String)
+GET         /reports/nextChooseValue/data/:s/                 controllers.ReportsController.nextChooseValue(s:String)
+POST        /reports/data/filteringPlace/:s/                  controllers.ReportsController.filteringPlace(s:String)
+POST        /reports/data/js/filteredData/:s/                 controllers.ReportsController.filteredData(s:String)
+POST        /reports/reportsByCampus/:s/                      controllers.ReportsController.reportsByCampus(s:String)
+POST        /reports/viewColumn/:s/                           controllers.ReportsController.viewColumn(s:String)
+POST        /reports/finalReport/:s/                          controllers.ReportsController.finalReport(s:String)
+POST        /reports/jsonReport/view/then/:s/                 controllers.ReportsController.jsonReport(s:String)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
