@@ -15,7 +15,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 libraryDependencies += guice
 libraryDependencies += ws
-libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.27"
+libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.30"
 libraryDependencies += "org.webjars" %% "webjars-play" % "2.6.2"
 libraryDependencies += "org.webjars" % "bootstrap" % "2.3.2"
 libraryDependencies += "org.webjars" % "flot" % "0.8.3"
