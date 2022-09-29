@@ -367,7 +367,7 @@ function reportHeader( info , title ) {
         '                    </span>\n' +
         '                </td>\n' +
         '                <td style="vertical-align: top">\n' +
-        '                    <span>JALI HOLDING GARAGE MANAGEMENT SYSTEM\n' +
+        '                    <span>GARAGE MANAGEMENT SYSTEM\n' +
         '                    </span>\n' +
         '                </td>\n' +
         '                <td style="vertical-align: bottom">\n' +
