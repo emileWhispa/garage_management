@@ -681,7 +681,7 @@ function spareApprove(ctrl, o) {
                                                 var ttt = rType.select.value === "2" ? "voucher" : "order";
                                                 ttt = "purchasing " + ttt;
                                                 h.innerText = ttt.toUpperCase();
-                                                // container.appendChild(reportHeader("JALI","JALI HOLDING GARAGE MANAGEMENT SYSTEM"));
+                                                // container.appendChild(reportHeader("JALI","GARAGE MANAGEMENT SYSTEM"));
                                                 container.appendChild(h);
                                                 body.appendChild(container);
 
