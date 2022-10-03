@@ -178,6 +178,9 @@ public class Application extends SuperBase {
         if( dClass == ChiefMechanic.class ){
             return routes.ChiefMechanic.save(javaName).url();
         }
+        if( dClass == Application.class ){
+            return routes.Application.save(javaName).url();
+        }
 
         return "/";
     }

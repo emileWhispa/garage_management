@@ -1039,7 +1039,9 @@ function show(el) {
 function hide(el) {
     if (el.length === undefined) {
         el.style.display = "none";
-        if( getStyle(el,"position") === "fixed" ) modalClose();
+        if( getStyle(el,"position") === "fixed" || $(el).hasClass("light-widget") ){
+            modalClose();
+        }
     } else {
         for (var i = 0; i < el.length; i++) {
             el[i].style.display = "none";

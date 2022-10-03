@@ -205,7 +205,7 @@ public abstract class SuperBase extends Controller {
             report.menuList.add(revenueReport);
         }
 
-        if( isAdmin() || isChair() || isFinance() || isTMD() || isAccountant() ){
+        if( isAccountant() ){
             settings.menuList.add(new Menu(app.tabs("g-req").url(), "fa fa-users", "Revenue settings"));
         }
 

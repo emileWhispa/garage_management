@@ -95,7 +95,7 @@ function MenuController() {
             "                </div>\n" +
             "            </div>\n" +
             "            <div class=\"pull-left info\">\n" +
-            "                <p>"+json.user.email+"</p>\n" +
+            "                <p>"+json.user.username+"</p>\n" +
             "                <a href=\"#\"><i class=\"fa fa-circle text-success\"></i> Role title</a>\n" +
             "            </div>";
 

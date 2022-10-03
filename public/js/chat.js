@@ -661,6 +661,15 @@ function spareApprove(ctrl, o) {
                             success: function (res) {
                                 var obj = ctrl.jsonParse(res);
                                 cArray = obj.list;
+                                cArray.push({
+                                    boldRow:true,
+                                    spareName:"Total",
+                                    quantity:cArray.reduce((prev,el)=>prev+el.quantity,0),
+                                    price:cArray.reduce((prev,el)=>prev+el.price,0),
+                                    total:cArray.reduce((prev,el)=>prev+el.total,0),
+                                    vat:cArray.reduce((prev,el)=>prev+el.vat,0),
+                                    finalTotal:cArray.reduce((prev,el)=>prev+el.finalTotal,0),
+                                });
                                 var date = obj.object.date;
                                 ld.hide();
                                 o.click();
@@ -704,6 +713,8 @@ function spareApprove(ctrl, o) {
 
 
                                                 }else {
+
+
 
                                                     var cols = [
                                                         {
@@ -754,7 +765,14 @@ function spareApprove(ctrl, o) {
                                                                             var tx = stackTr(cols,
                                                                                 {
                                                                                     onCreate: function (td, trX, elem) {
-                                                                                        td.innerHTML = el[elem.key];
+                                                                                        let value = el[elem.key]
+                                                                                        if(typeof value === 'number'){
+                                                                                            value = value?.toLocaleString();
+                                                                                        }
+                                                                                        if(el.boldRow){
+                                                                                            td.style.fontWeight = "bold";
+                                                                                        }
+                                                                                        td.innerHTML = value;
                                                                                     }
                                                                                 });
 
@@ -771,7 +789,7 @@ function spareApprove(ctrl, o) {
                                                     container.appendChild(tb);
 
                                                     var dx = document.createElement("div");
-                                                    dx.innerHTML = "<br> <span contenteditable='true'>Please notify us immediately if you are unable to provide above specified</span> <br> <b>Executive chairman</b><br>";
+                                                    dx.innerHTML = "<br> <span contenteditable='true'>Please notify us immediately if you are unable to provide above specified</span> <br> <b><span contenteditable='true'>Executive chairman</span></b><br>";
 
                                                     container.appendChild(dx);
 
